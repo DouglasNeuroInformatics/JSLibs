@@ -6,6 +6,7 @@
 - ArrowToggle: Remove `arrowSize: number`, can be replaced with `size: 'sm' | 'md' | 'lg'`
 - Button: Removed `label` and `icon` from props, can be replaced by `children`
 - Tailwind: Removed `text-muted` and `text-strong`, can be replaced by `text-muted-foreground` and `text-primary-foreground` respectively
+- `FormPageWrapper`: Deleted
 
 ### Minor Changes
 - ArrowToggle: Added background effect on hover
