@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
+const animate = require('tailwindcss-animate');
 const tailwindcss = require('@headlessui/tailwindcss');
 const containerQueries = require('@tailwindcss/container-queries');
 const plugin = require('tailwindcss/plugin');
@@ -12,6 +13,7 @@ module.exports = {
   content: [isDev ? path.resolve(__dirname, 'src/**/*.{js,jsx,ts,tsx}') : path.resolve(__dirname, 'dist/index.js')],
   darkMode: ['class', '[data-mode="dark"]'],
   plugins: [
+    animate,
     containerQueries,
     tailwindcss,
     plugin(({ addBase, addComponents, addUtilities, theme }) => {
