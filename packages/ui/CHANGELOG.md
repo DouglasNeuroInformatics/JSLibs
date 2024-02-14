@@ -1,5 +1,12 @@
 # @douglasneuroinformatics/ui
 
+## 6.0.0
+
+### Breaking Changes
+- Button: Removed `label` and `icon` from props, to be replaced by `children`
+### Minor Changes
+- Button: Added new variants
+
 ## 5.2.0
 
 ### Minor Changes

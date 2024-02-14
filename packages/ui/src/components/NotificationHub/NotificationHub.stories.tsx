@@ -15,7 +15,6 @@ const meta: Meta<typeof NotificationHub> = {
         <div className="border">
           <Story />
           <Button
-            label="Add Notification"
             type="button"
             onClick={() => {
               notifications.addNotification({
@@ -23,7 +22,9 @@ const meta: Meta<typeof NotificationHub> = {
                 type: 'info'
               });
             }}
-          />
+          >
+            Add Notification
+          </Button>
         </div>
       );
     }

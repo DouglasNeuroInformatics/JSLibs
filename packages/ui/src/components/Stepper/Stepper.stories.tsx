@@ -24,8 +24,8 @@ const MockStep: React.FC<{ step: number }> = ({ step }) => {
         ipsam officiis, temporibus debitis nam distinctio minima cupiditate!
       </p>
       <div className="flex gap-x-3">
-        <Button label="Previous Step" onClick={() => ctx.updateIndex('decrement')} />
-        <Button label="Next Step" onClick={() => ctx.updateIndex('increment')} />
+        <Button onClick={() => ctx.updateIndex('decrement')}>Previous Step</Button>
+        <Button onClick={() => ctx.updateIndex('increment')}>Next Step</Button>
       </div>
     </div>
   );

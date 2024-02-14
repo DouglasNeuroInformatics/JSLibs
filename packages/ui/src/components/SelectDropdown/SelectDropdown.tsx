@@ -2,9 +2,9 @@ import { Listbox, Transition } from '@headlessui/react';
 import { CheckIcon } from '@heroicons/react/24/solid';
 import { clsx } from 'clsx';
 
-import { Button, type ButtonProps } from '../Button/Button';
+import { type ButtonProps } from '../Button/Button';
 import { Card } from '../Card/Card';
-import { DropdownIcon } from '../Dropdown/DropdownIcon';
+import { DropdownButton } from '../DropdownButton';
 
 export type SelectOption = {
   key: string;
@@ -42,13 +42,12 @@ export const SelectDropdown = <T extends SelectOption>({
       onChange={setSelected}
     >
       <Listbox.Button
-        as={Button}
+        as={DropdownButton}
         className="h-full w-full"
-        icon={<DropdownIcon />}
-        iconPosition="right"
-        label={title}
         variant={variant}
-      />
+      >
+        {title}
+      </Listbox.Button>
       <Transition
         as="div"
         className="absolute bottom-0 z-10 w-full"

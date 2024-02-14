@@ -116,19 +116,21 @@ const FormComponent = <T extends Types.FormDataType>({
         <Button
           aria-label="Submit Button"
           className="block w-full first-letter:capitalize"
-          label={submitBtnLabel ?? t('form.submit')}
           type="submit"
           variant="primary"
-        />
+        >
+          {submitBtnLabel ?? t('form.submit')}
+        </Button>
         {resetBtn && (
           <Button
             aria-label="Reset Button"
             className="block w-full first-letter:capitalize"
-            label={t('form.reset')}
             type="button"
             variant="secondary"
             onClick={reset}
-          />
+          >
+            {t('form.reset')}
+          </Button>
         )}
       </div>
       {rootError && <FormErrorMessage message={rootError} />}

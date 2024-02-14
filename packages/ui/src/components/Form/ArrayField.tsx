@@ -78,8 +78,12 @@ export const ArrayField = memo(function ArrayField({
         </div>
       ))}
       <div className="mb-5 flex gap-5">
-        <Button label={t('form.append')} type="button" onClick={appendField} />
-        <Button label={t('form.remove')} type="button" variant="secondary" onClick={removeField} />
+        <Button type="button" onClick={appendField}>
+          {t('form.append')}
+        </Button>
+        <Button type="button" variant="secondary" onClick={removeField}>
+          {t('form.remove')}
+        </Button>
       </div>
     </div>
   );

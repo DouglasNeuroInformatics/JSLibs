@@ -1,9 +1,9 @@
 import { Menu, Transition } from '@headlessui/react';
 import { twMerge } from 'tailwind-merge';
 
-import { Button, type ButtonProps } from '../Button';
+import { type ButtonProps } from '../Button';
 import { Card } from '../Card/Card';
-import { DropdownIcon } from './DropdownIcon';
+import { DropdownButton } from '../DropdownButton';
 
 type DropdownOptions = Record<string, string> | readonly string[];
 
@@ -44,16 +44,15 @@ export function Dropdown<const T extends DropdownOptions>({
   return (
     <Menu as="div" className={twMerge('relative w-full whitespace-nowrap', className)}>
       <Menu.Button
-        as={Button}
+        as={DropdownButton}
         className="h-full w-full"
         disabled={options.length === 0}
-        icon={<DropdownIcon size={size} />}
-        iconPosition="right"
-        label={title}
         size={size}
         style={{ width: '100%' }}
         variant={variant}
-      />
+      >
+        {title}
+      </Menu.Button>
       <Transition
         as="div"
         className="absolute bottom-0 z-10 w-full"

@@ -1,44 +1,47 @@
-import React, { type ForwardedRef } from 'react';
+import React from 'react';
 
+import { Slot } from '@radix-ui/react-slot';
+import { type VariantProps, cva } from 'class-variance-authority';
 import type { Simplify } from 'type-fest';
 
 import { cn } from '@/utils/cn';
 
-export type ButtonProps = Simplify<
-  Omit<React.ComponentPropsWithoutRef<'button'>, 'children'> & {
-    disabled?: boolean;
-    icon?: React.ReactElement;
-    iconPosition?: 'left' | 'right';
-    label: string;
-    size?: 'lg' | 'md' | 'sm';
-    variant?: 'danger' | 'primary' | 'secondary';
+export const buttonVariants = cva(
+  'flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50',
+  {
+    defaultVariants: {
+      size: 'md',
+      variant: 'primary'
+    },
+    variants: {
+      size: {
+        lg: 'h-10 rounded-md px-8',
+        md: 'h-9 px-4 py-2',
+        sm: 'h-8 rounded-md px-3 text-xs'
+      },
+      variant: {
+        danger: 'bg-destructive text-destructive-foreground shadow-sm hover:bg-destructive/90',
+        ghost: 'hover:bg-accent hover:text-accent-foreground',
+        link: 'text-primary underline-offset-4 hover:underline',
+        outline: 'border border-input bg-background shadow-sm hover:bg-accent hover:text-accent-foreground',
+        primary: 'bg-primary text-primary-foreground shadow hover:bg-primary/90',
+        secondary: 'bg-secondary border text-secondary-foreground shadow-sm hover:bg-secondary/80'
+      }
+    }
   }
+);
+
+export type ButtonProps = Simplify<
+  React.ButtonHTMLAttributes<HTMLButtonElement> &
+    VariantProps<typeof buttonVariants> & {
+      asChild?: boolean;
+    }
 >;
 
-export const Button = React.forwardRef(function Button(
-  { className, disabled, icon, iconPosition = 'left', label, size = 'md', variant = 'primary', ...props }: ButtonProps,
-  ref?: ForwardedRef<HTMLButtonElement>
+export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(function Button(
+  { asChild = false, className, size = 'md', variant = 'primary', ...props },
+  ref
 ) {
-  return (
-    <button
-      className={cn(
-        'flex items-center justify-center rounded-md font-medium shadow focus:outline-none disabled:cursor-not-allowed disabled:opacity-70',
-        size === 'sm' && 'px-4 py-2 text-sm',
-        size === 'md' && 'text-md px-6 py-2',
-        size === 'lg' && 'px-8 py-3 text-lg',
-        variant === 'primary' && 'bg-slate-800 text-slate-100 hover:bg-slate-700 dark:bg-sky-700 dark:hover:bg-sky-600',
-        variant === 'secondary' &&
-          'border border-slate-300 dark:border-slate-600 hover:backdrop-brightness-95 dark:hover:backdrop-brightness-150 bg-inherit',
-        variant === 'danger' && 'bg-red-600 text-white hover:bg-opacity-90',
-        className
-      )}
-      disabled={disabled}
-      ref={ref}
-      {...props}
-    >
-      {iconPosition === 'left' && icon && <div className="mr-2">{icon}</div>}
-      {label}
-      {iconPosition === 'right' && icon && <div className="ml-2">{icon}</div>}
-    </button>
-  );
+  const Comp = asChild ? Slot : 'button';
+  return <Comp className={cn(buttonVariants({ className, size, variant }))} ref={ref} {...props} />;
 });

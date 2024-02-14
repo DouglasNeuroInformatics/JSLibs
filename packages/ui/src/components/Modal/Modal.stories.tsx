@@ -24,14 +24,14 @@ export const Default: Story = {
     children: (
       <>
         <div>
-          <p className="text-sm text-default">
-            Please indicate whether you accept our terms and conditions
-          </p>
+          <p className="text-sm text-default">Please indicate whether you accept our terms and conditions</p>
         </div>
 
         <div className="mt-4 flex">
-          <Button className="mr-2" label="Accept" variant="primary" />
-          <Button label="Decline" variant="secondary" />
+          <Button className="mr-2" variant="primary">
+            Accept
+          </Button>
+          <Button variant="secondary">Decline</Button>
         </div>
       </>
     )

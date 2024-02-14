@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { Button } from './Button';
+import { DropdownButton } from './DropdownButton';
 
-type Story = StoryObj<typeof Button>;
+type Story = StoryObj<typeof DropdownButton>;
 
-export default { component: Button } satisfies Meta<typeof Button>;
+export default { component: DropdownButton } as Meta<typeof DropdownButton>;
 
 export const Primary: Story = {
   args: {
