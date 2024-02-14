@@ -92,7 +92,6 @@ module.exports = {
           DEFAULT: 'var(--primary)',
           foreground: 'var(--primary-foreground)'
         },
-        ring: 'var(--ring)',
         secondary: {
           DEFAULT: 'var(--secondary)',
           foreground: 'var(--secondary-foreground)'
