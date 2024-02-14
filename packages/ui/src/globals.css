@@ -7,8 +7,8 @@
     --background: theme(colors.slate.100);
     --foreground: theme(colors.slate.900);
 
-    --popover: theme(colors.slate.100);
-    --popover-foreground: theme(colors.slate.900);
+    --overlay: theme(colors.slate.50);
+    --overlay-foreground: theme(colors.slate.900);
 
     --primary: theme(colors.slate.900);
     --primary-foreground: theme(colors.slate.100);
@@ -36,8 +36,8 @@
     --background: theme(colors.slate.900);
     --foreground: theme(colors.slate.100);
 
-    --popover: theme(colors.slate.900);
-    --popover-foreground: theme(colors.slate.100);
+    --overlay: theme(colors.slate.800);
+    --overlay-foreground: theme(colors.slate.100);
 
     --primary: theme(colors.sky.700);
     --primary-foreground: theme(colors.slate.100);

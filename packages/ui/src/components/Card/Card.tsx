@@ -6,9 +6,7 @@ const CardRoot = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivEl
   { className, ...props },
   ref
 ) {
-  return (
-    <div className={cn('rounded-xl border bg-slate-50 dark:bg-slate-800 shadow', className)} ref={ref} {...props} />
-  );
+  return <div className={cn('rounded-xl border bg-overlay overflow-hidden shadow', className)} ref={ref} {...props} />;
 });
 
 export const Card = Object.assign(CardRoot, {

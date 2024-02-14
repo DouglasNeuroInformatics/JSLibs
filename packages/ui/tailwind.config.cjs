@@ -84,9 +84,9 @@ module.exports = {
           DEFAULT: 'var(--muted)',
           foreground: 'var(--muted-foreground)'
         },
-        popover: {
-          DEFAULT: 'var(--popover)',
-          foreground: 'var(--popover-foreground)'
+        overlay: {
+          DEFAULT: 'var(--overlay)',
+          foreground: 'var(--overlay-foreground)'
         },
         primary: {
           DEFAULT: 'var(--primary)',
