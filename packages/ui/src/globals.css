@@ -27,7 +27,7 @@
 
     --border: theme(colors.slate.300);
     --input: theme(colors.slate.300);
-    --ring: theme(colors.slate.900);
+    --ring: theme(colors.sky.500);
 
     --radius: 0.5rem;
   }
@@ -53,7 +53,6 @@
 
     --border: theme(colors.slate.700);
     --input: theme(colors.slate.700);
-    --ring: theme(colors.slate.100);
   }
 }
 
