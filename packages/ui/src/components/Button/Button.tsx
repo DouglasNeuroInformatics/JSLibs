@@ -1,15 +1,19 @@
 import React, { type ForwardedRef } from 'react';
 
-import { twMerge } from 'tailwind-merge';
+import type { Simplify } from 'type-fest';
 
-export type ButtonProps = {
-  disabled?: boolean;
-  icon?: React.ReactElement;
-  iconPosition?: 'left' | 'right';
-  label: string;
-  size?: 'lg' | 'md' | 'sm';
-  variant?: 'danger' | 'primary' | 'secondary';
-} & Omit<React.ComponentPropsWithoutRef<'button'>, 'children'>;
+import { cn } from '@/utils/cn';
+
+export type ButtonProps = Simplify<
+  Omit<React.ComponentPropsWithoutRef<'button'>, 'children'> & {
+    disabled?: boolean;
+    icon?: React.ReactElement;
+    iconPosition?: 'left' | 'right';
+    label: string;
+    size?: 'lg' | 'md' | 'sm';
+    variant?: 'danger' | 'primary' | 'secondary';
+  }
+>;
 
 export const Button = React.forwardRef(function Button(
   { className, disabled, icon, iconPosition = 'left', label, size = 'md', variant = 'primary', ...props }: ButtonProps,
@@ -17,7 +21,7 @@ export const Button = React.forwardRef(function Button(
 ) {
   return (
     <button
-      className={twMerge(
+      className={cn(
         'flex items-center justify-center rounded-md font-medium shadow focus:outline-none disabled:cursor-not-allowed disabled:opacity-70',
         size === 'sm' && 'px-4 py-2 text-sm',
         size === 'md' && 'text-md px-6 py-2',

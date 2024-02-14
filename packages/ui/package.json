@@ -57,9 +57,9 @@
     "@storybook/blocks": "^7.5.1",
     "@storybook/react": "^7.5.1",
     "@storybook/react-vite": "^7.5.1",
+    "@testing-library/jest-dom": "^6.4.2",
     "@testing-library/react": "^14.2.1",
     "@testing-library/user-event": "^14.5.2",
-    "@testing-library/jest-dom": "^6.4.2",
     "@types/lodash": "^4.14.200",
     "@types/react": "^18.2.33",
     "@types/react-dom": "^18.2.14",
@@ -75,6 +75,7 @@
     "storybook": "^7.5.1",
     "storybook-react-i18next": "^2.0.9",
     "tailwindcss": "^3.3.5",
+    "tailwindcss-animate": "^1.0.7",
     "vite": "^4.5.0",
     "vitest": "^1.2.2"
   },
