@@ -22,8 +22,8 @@
     --accent: theme(colors.slate.200);
     --accent-foreground: theme(colors.slate.800);
 
-    --destructive: theme(colors.red.500);
-    --destructive-foreground: theme(colors.white);
+    --destructive: theme(colors.red.600);
+    --destructive-foreground: theme(colors.slate.100);
 
     --border: theme(colors.slate.300);
     --input: theme(colors.slate.300);
@@ -50,9 +50,6 @@
 
     --accent: theme(colors.slate.800);
     --accent-foreground: theme(colors.slate.200);
-
-    --destructive: theme(colors.red.500);
-    --destructive-foreground: theme(colors.white);
 
     --border: theme(colors.slate.700);
     --input: theme(colors.slate.700);

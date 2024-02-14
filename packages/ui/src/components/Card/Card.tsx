@@ -7,22 +7,22 @@ const CardRoot = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivEl
   ref
 ) {
   return (
-    <div className={cn('rounded-xl border bg-card shadow', className)} ref={ref} {...props} />
+    <div className={cn('rounded-xl border bg-slate-50 dark:bg-slate-800 shadow', className)} ref={ref} {...props} />
   );
 });
 
 export const Card = Object.assign(CardRoot, {
   Content: ({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) => (
-    <div className={cn('p-6 pt-0', className)} {...props} />
+    <div className={cn('p-6 pt-0 bg-inherit', className)} {...props} />
   ),
   Description: ({ className, ...props }: React.HTMLAttributes<HTMLParagraphElement>) => (
     <p className={cn('text-sm text-muted-foreground', className)} {...props} />
   ),
   Footer: ({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) => {
-    return <div className={cn('flex items-center p-6 pt-0', className)} {...props} />;
+    return <div className={cn('flex bg-inherit items-center p-6 pt-0', className)} {...props} />;
   },
   Header: ({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) => (
-    <div className={cn('flex flex-col space-y-1.5 p-6', className)} {...props} />
+    <div className={cn('bg-inherit flex flex-col space-y-1.5 p-6', className)} {...props} />
   ),
   Title: ({ children, className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
     <h3 className={cn('font-semibold leading-none tracking-tight', className)} {...props}>

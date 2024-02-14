@@ -7,6 +7,7 @@
 - Tailwind: Removed `text-muted` and `text-strong`, can be replaced by `text-muted-foreground` and `text-primary-foreground` respectively
 
 ### Minor Changes
+- ArrowToggle: Added background effect on hover
 - Button: Added new variants
 - Card: Added `Card.Content`, `Card.Description`, `Card.Footer`, `Card.Header`, `Card.Title`
 - Tailwind: Added CSS variables

@@ -27,7 +27,7 @@ export type ArrowToggleProps = Simplify<
 >;
 
 export const ArrowToggle = React.forwardRef<HTMLButtonElement, ArrowToggleProps>(function ArrowToggle(
-  { arrowSize, className, content, contentPosition, onClick, position, rotation, variant = 'outline', ...props },
+  { arrowSize, className, content, contentPosition, onClick, position, rotation, variant = 'ghost', ...props },
   ref
 ) {
   const [isToggled, setIsToggled] = useState(false);
