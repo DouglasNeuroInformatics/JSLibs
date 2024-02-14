@@ -7,6 +7,7 @@ import { cn } from '@/utils/cn';
 
 import { withI18nProvider } from '../../utils/with-i18n-provider';
 import { ArrowToggle } from '../ArrowToggle';
+import { ControlledArrowToggle } from '../ArrowToggle/ControlledArrowToggle';
 import { Card } from '../Card';
 import { CALENDAR_ANIMATION_DURATION, Calendar } from './Calendar';
 import { YearSelector } from './YearSelector';
@@ -68,10 +69,12 @@ export const DatePicker = withI18nProvider(function DatePicker({ onSelection, ..
       <div className="mb-3 flex items-center justify-between">
         <div className="flex items-center">
           <span className="font-medium text-sm">{`${monthName} ${date.getFullYear()}`}</span>
-          <ArrowToggle
+          <ControlledArrowToggle
             className="mx-1"
+            isToggled={showYearSelector}
             position="up"
             rotation={180}
+            setIsToggled={setShowYearSelector}
             size="sm"
             tabIndex={-1}
             onClick={() => {
