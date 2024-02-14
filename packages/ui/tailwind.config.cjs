@@ -16,17 +16,7 @@ module.exports = {
     animate,
     containerQueries,
     tailwindcss,
-    plugin(({ addBase, addComponents, addUtilities, theme }) => {
-      addBase({
-        'html.dark': {
-          backgroundColor: theme('colors.slate.900'),
-          color: theme('colors.slate.300')
-        },
-        'html.light': {
-          backgroundColor: theme('colors.slate.100'),
-          color: theme('colors.slate.700')
-        }
-      });
+    plugin(({ addComponents, addUtilities }) => {
       addComponents({
         '.field-input': {
           '@apply field-input-base border-b-2 text-slate-700 dark:text-slate-300 border-slate-200 dark:border-slate-500':
@@ -54,12 +44,6 @@ module.exports = {
           },
           '-ms-overflow-style': 'none',
           'scrollbar-width': 'none'
-        },
-        '.text-default': {
-          '@apply text-slate-700 dark:text-slate-300': {}
-        },
-        '.text-strong': {
-          '@apply text-slate-900 dark:text-slate-100': {}
         }
       });
     })
@@ -85,48 +69,36 @@ module.exports = {
       },
       colors: {
         accent: {
-          DEFAULT: 'hsl(var(--accent))',
-          foreground: 'hsl(var(--accent-foreground))'
+          DEFAULT: 'var(--accent)',
+          foreground: 'var(--accent-foreground)'
         },
-        background: 'hsl(var(--background))',
-        border: 'hsl(var(--border))',
-        card: {
-          DEFAULT: 'hsl(var(--card))',
-          foreground: 'hsl(var(--card-foreground))'
-        },
+        background: 'var(--background)',
+        border: 'var(--border)',
         destructive: {
-          DEFAULT: 'hsl(var(--destructive))',
-          foreground: 'hsl(var(--destructive-foreground))'
+          DEFAULT: 'var(--destructive)',
+          foreground: 'var(--destructive-foreground)'
         },
-        foreground: 'hsl(var(--foreground))',
-        input: 'hsl(var(--input))',
+        foreground: 'var(--foreground)',
+        input: 'var(--input)',
         muted: {
-          DEFAULT: 'hsl(var(--muted))',
-          foreground: 'hsl(var(--muted-foreground))'
+          DEFAULT: 'var(--muted)',
+          foreground: 'var(--muted-foreground)'
         },
         popover: {
-          DEFAULT: 'hsl(var(--popover))',
-          foreground: 'hsl(var(--popover-foreground))'
+          DEFAULT: 'var(--popover)',
+          foreground: 'var(--popover-foreground)'
         },
         primary: {
-          DEFAULT: 'hsl(var(--primary))',
-          foreground: 'hsl(var(--primary-foreground))'
+          DEFAULT: 'var(--primary)',
+          foreground: 'var(--primary-foreground)'
         },
-        ring: 'hsl(var(--ring))',
+        ring: 'var(--ring)',
         secondary: {
-          DEFAULT: 'hsl(var(--secondary))',
-          foreground: 'hsl(var(--secondary-foreground))'
+          DEFAULT: 'var(--secondary)',
+          foreground: 'var(--secondary-foreground)'
         }
       },
       keyframes: {
-        'accordion-down': {
-          from: { height: '0' },
-          to: { height: 'var(--radix-accordion-content-height)' }
-        },
-        'accordion-up': {
-          from: { height: 'var(--radix-accordion-content-height)' },
-          to: { height: '0' }
-        },
         round: {
           '0%': {
             transform: 'rotate(0deg)'

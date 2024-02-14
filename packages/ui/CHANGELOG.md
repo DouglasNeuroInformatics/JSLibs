@@ -3,11 +3,13 @@
 ## 6.0.0
 
 ### Breaking Changes
-- Button: Removed `label` and `icon` from props, to be replaced by `children`
+- Button: Removed `label` and `icon` from props, can be replaced by `children`
+- Tailwind: Removed `text-muted` and `text-strong`, can be replaced by `text-muted-foreground` and `text-primary-foreground` respectively
 
 ### Minor Changes
 - Button: Added new variants
 - Card: Added `Card.Content`, `Card.Description`, `Card.Footer`, `Card.Header`, `Card.Title`
+- Tailwind: Added CSS variables
 
 ## 5.2.0
 
