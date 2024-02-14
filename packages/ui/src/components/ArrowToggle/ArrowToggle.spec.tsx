@@ -11,7 +11,7 @@ describe('ArrowToggle', () => {
   });
 
   it('renders with a custom class', () => {
-    render(<ArrowToggle arrowSize={24} className="custom-class" position="down" rotation={90} />);
+    render(<ArrowToggle className="custom-class" position="down" rotation={90} size="lg" />);
     expect(screen.getByRole('button')).toHaveClass('custom-class');
   });
 

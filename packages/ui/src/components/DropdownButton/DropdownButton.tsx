@@ -3,12 +3,11 @@ import React from 'react';
 import { Button, type ButtonProps } from '../Button';
 import { DropdownIcon } from './DropdownIcon';
 
-export type DropdownButtonProps = Omit<ButtonProps, 'children'> & {
-  icon?: React.ReactElement;
-  label: string;
+export type DropdownButtonProps = ButtonProps & {
+  size?: 'lg' | 'md' | 'sm';
 };
 
-export const DropdownButton = React.forwardRef<HTMLButtonElement, ButtonProps>(function DropdownButton(
+export const DropdownButton = React.forwardRef<HTMLButtonElement, DropdownButtonProps>(function DropdownButton(
   { children, size, ...props },
   ref
 ) {

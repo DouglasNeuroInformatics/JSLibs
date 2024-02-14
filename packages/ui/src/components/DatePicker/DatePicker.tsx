@@ -1,12 +1,13 @@
 import React, { useReducer, useState } from 'react';
 
-import { clsx } from 'clsx';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 
+import { cn } from '@/utils/cn';
+
 import { withI18nProvider } from '../../utils/with-i18n-provider';
-import { ArrowToggle } from '../ArrowToggle/ArrowToggle';
-import { Card } from '../Card/Card';
+import { ArrowToggle } from '../ArrowToggle';
+import { Card } from '../Card';
 import { CALENDAR_ANIMATION_DURATION, Calendar } from './Calendar';
 import { YearSelector } from './YearSelector';
 
@@ -66,22 +67,24 @@ export const DatePicker = withI18nProvider(function DatePicker({ onSelection, ..
     <Card className="w-fit p-3" {...props}>
       <div className="mb-3 flex items-center justify-between">
         <div className="flex items-center">
-          <span className="font-semibold">{`${monthName} ${date.getFullYear()}`}</span>
+          <span className="font-medium text-sm">{`${monthName} ${date.getFullYear()}`}</span>
           <ArrowToggle
-            className="mx-1 flex items-center justify-center rounded-full p-1.5 hover:bg-slate-200 dark:hover:bg-slate-700"
+            className="mx-1"
             position="up"
             rotation={180}
+            size="sm"
             tabIndex={-1}
             onClick={() => {
               setShowYearSelector(!showYearSelector);
             }}
           />
         </div>
-        <div className={clsx('flex', { hidden: showYearSelector })}>
+        <div className={cn('flex', { hidden: showYearSelector })}>
           <ArrowToggle
-            className="mx-1 flex items-center justify-center rounded-full p-1.5 hover:bg-slate-200 dark:hover:bg-slate-700"
+            className="mx-1 text-muted-foreground"
             position="left"
             rotation={0}
+            size="sm"
             tabIndex={-1}
             onClick={() => {
               if (canSetMonth) {
@@ -94,7 +97,7 @@ export const DatePicker = withI18nProvider(function DatePicker({ onSelection, ..
             }}
           />
           <ArrowToggle
-            className="ml-1 flex items-center justify-center rounded-full p-1.5 hover:bg-slate-200 dark:hover:bg-slate-700"
+            className="ml-1 text-muted-foreground"
             position="right"
             rotation={0}
             tabIndex={-1}

@@ -22,7 +22,7 @@ export type DropdownProps<T extends DropdownOptions> = {
   /** Either a list of options for the dropdown, or an object with options mapped to custom labels  */
   options: T;
 
-  size?: ButtonProps['size'];
+  size?: 'lg' | 'md' | 'sm';
 
   /** The text content for the dropdown toggle */
   title: string;

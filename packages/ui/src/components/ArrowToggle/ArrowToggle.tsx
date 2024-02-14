@@ -5,11 +5,14 @@ import type { Simplify } from 'type-fest';
 
 import { Button, type ButtonProps } from '../Button';
 
+const ICON_SIZE = {
+  lg: 18,
+  md: 16,
+  sm: 14
+};
+
 export type ArrowToggleProps = Simplify<
   Omit<React.ComponentPropsWithoutRef<'button'>, 'content'> & {
-    /** The size of the arrow in pixels (default is 16px) */
-    arrowSize?: number;
-
     /** Custom content to insert beside the arrow */
     content?: React.ReactNode;
 
@@ -22,12 +25,15 @@ export type ArrowToggleProps = Simplify<
     /** The clockwise rotation of the arrow when toggled (e.g., if the position is 'right' and rotation is 90, the arrow will point down) */
     rotation: number;
 
+    /** The size of the icon */
+    size?: 'lg' | 'md' | 'sm';
+
     variant?: Extract<ButtonProps['variant'], 'ghost' | 'outline'>;
   }
 >;
 
 export const ArrowToggle = React.forwardRef<HTMLButtonElement, ArrowToggleProps>(function ArrowToggle(
-  { arrowSize, className, content, contentPosition, onClick, position, rotation, variant = 'ghost', ...props },
+  { className, content, contentPosition, onClick, position, rotation, size, variant = 'ghost', ...props },
   ref
 ) {
   const [isToggled, setIsToggled] = useState(false);
@@ -52,6 +58,8 @@ export const ArrowToggle = React.forwardRef<HTMLButtonElement, ArrowToggleProps>
     }
   };
 
+  size = size ?? 'md';
+
   return (
     <Button
       className={className}
@@ -66,9 +74,9 @@ export const ArrowToggle = React.forwardRef<HTMLButtonElement, ArrowToggleProps>
       <ChevronUpIcon
         className="transform-gpu transition-transform"
         data-testid="arrow-up-icon"
-        height={arrowSize ?? 16}
+        height={ICON_SIZE[size]}
         style={{ transform: `rotate(${computedRotation}deg)` }}
-        width={arrowSize ?? 16}
+        width={ICON_SIZE[size]}
       />
       {content && contentPosition === 'right' && <span className="ml-1">{content}</span>}
     </Button>

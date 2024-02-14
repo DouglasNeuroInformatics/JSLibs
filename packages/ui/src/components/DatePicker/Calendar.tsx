@@ -28,9 +28,9 @@ export const Calendar = React.forwardRef<HTMLDivElement, CalendarProps>(function
         key={`${props.year}-${props.month}`}
         transition={{ duration: CALENDAR_ANIMATION_DURATION }}
       >
-        <div className="grid w-72 grid-cols-7 gap-3" ref={ref}>
+        <div className="grid w-56 grid-cols-7 text-sm h-56" ref={ref}>
           {range(7).map((i) => (
-            <div className="flex items-center justify-center" key={i}>
+            <div className="flex text-muted-foreground w-8 h-8 items-center justify-center" key={i}>
               {t(`datetime.days.${i as 0}`)
                 .charAt(0)
                 .toUpperCase()}
@@ -39,7 +39,7 @@ export const Calendar = React.forwardRef<HTMLDivElement, CalendarProps>(function
           <div style={{ gridColumn: `span ${firstDay} / span ${firstDay}` }} />
           {days.map((day) => (
             <button
-              className="flex h-9 w-9 items-center justify-center rounded-full text-sm hover:bg-slate-200 dark:hover:bg-slate-700"
+              className="flex h-8 w-8 rounded-md items-center justify-center hover:bg-slate-200 dark:hover:bg-slate-700"
               key={day}
               tabIndex={-1}
               type="button"
