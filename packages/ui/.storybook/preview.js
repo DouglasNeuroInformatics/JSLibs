@@ -2,7 +2,7 @@ import { withThemeByDataAttribute } from '@storybook/addon-styling';
 
 import i18n from '../src/services/i18n';
 
-import './tailwind.css';
+import '../src/globals.css';
 
 /** @type {import('@storybook/react').Preview}*/
 export default {
