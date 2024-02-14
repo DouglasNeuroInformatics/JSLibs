@@ -25,10 +25,11 @@ export const Default: Story = {
           </p>
         </Card.Content>
         <Card.Footer className="flex justify-between">
-          <Button variant="outline">Do Something</Button>
-          <Button>Do Something Else</Button>
+          <Button>Option A</Button>
+          <Button variant="outline">Option B</Button>
         </Card.Footer>
       </>
-    )
+    ),
+    className: 'max-w-xl'
   }
 };

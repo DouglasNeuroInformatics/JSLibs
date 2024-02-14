@@ -26,3 +26,10 @@ export const Danger: Story = {
     variant: 'danger'
   }
 };
+
+export const Outline: Story = {
+  args: {
+    children: 'Outline Button',
+    variant: 'outline'
+  }
+};

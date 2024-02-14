@@ -1,8 +1,9 @@
 import React, { useMemo, useState } from 'react';
 
 import { ChevronUpIcon } from '@heroicons/react/24/solid';
-import { twMerge } from 'tailwind-merge';
 import type { Simplify } from 'type-fest';
+
+import { Button, type ButtonProps } from '../Button';
 
 export type ArrowToggleProps = Simplify<
   Omit<React.ComponentPropsWithoutRef<'button'>, 'content'> & {
@@ -20,11 +21,13 @@ export type ArrowToggleProps = Simplify<
 
     /** The clockwise rotation of the arrow when toggled (e.g., if the position is 'right' and rotation is 90, the arrow will point down) */
     rotation: number;
+
+    variant?: Extract<ButtonProps['variant'], 'ghost' | 'outline'>;
   }
 >;
 
 export const ArrowToggle = React.forwardRef<HTMLButtonElement, ArrowToggleProps>(function ArrowToggle(
-  { arrowSize, className, content, contentPosition, onClick, position, rotation, ...props },
+  { arrowSize, className, content, contentPosition, onClick, position, rotation, variant = 'outline', ...props },
   ref
 ) {
   const [isToggled, setIsToggled] = useState(false);
@@ -50,10 +53,12 @@ export const ArrowToggle = React.forwardRef<HTMLButtonElement, ArrowToggleProps>
   };
 
   return (
-    <button
-      className={twMerge('flex items-center justify-center', className)}
+    <Button
+      className={className}
       ref={ref}
+      size="icon"
       type="button"
+      variant={variant}
       onClick={handleClick}
       {...props}
     >
@@ -66,6 +71,6 @@ export const ArrowToggle = React.forwardRef<HTMLButtonElement, ArrowToggleProps>
         width={arrowSize ?? 16}
       />
       {content && contentPosition === 'right' && <span className="ml-1">{content}</span>}
-    </button>
+    </Button>
   );
 });
