@@ -1,10 +1,6 @@
 import { ChevronDownIcon } from '@heroicons/react/24/solid';
 
-const ICON_SIZE = {
-  lg: 18,
-  md: 16,
-  sm: 14
-};
+import { BUTTON_ICON_SIZE } from '../Button';
 
 export type DropdownIconProps = {
   className?: string;
@@ -13,5 +9,5 @@ export type DropdownIconProps = {
 
 export const DropdownIcon = ({ className, size }: DropdownIconProps) => {
   size = size ?? 'md';
-  return <ChevronDownIcon className={className} height={ICON_SIZE[size]} width={ICON_SIZE[size]} />;
+  return <ChevronDownIcon className={className} height={BUTTON_ICON_SIZE[size]} width={BUTTON_ICON_SIZE[size]} />;
 };

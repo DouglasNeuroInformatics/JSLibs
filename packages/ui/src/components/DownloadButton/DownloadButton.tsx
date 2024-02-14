@@ -1,24 +1,21 @@
 import { ArrowDownTrayIcon } from '@heroicons/react/24/outline';
 
-import { cn } from '../../utils/cn';
+import { cn } from '@/utils/cn';
 
-export type DownloadButtonProps = {
-  className?: string;
-  onClick?: React.MouseEventHandler<HTMLButtonElement>;
-  size?: number;
+import { BUTTON_ICON_SIZE, Button, type ButtonProps } from '../Button';
+
+export type DownloadButtonProps = Omit<ButtonProps, 'children'> & {
+  size?: 'lg' | 'md' | 'sm';
 };
 
-export const DownloadButton = ({ className, onClick, size = 24 }: DownloadButtonProps) => {
+export const DownloadButton = ({ className, size = 'md', variant = 'outline', ...props }: DownloadButtonProps) => {
   return (
-    <button
-      className={cn(
-        'rounded-md p-2 transition-transform hover:backdrop-brightness-95 dark:hover:backdrop-brightness-150',
-        className
-      )}
-      type="button"
-      onClick={onClick}
-    >
-      <ArrowDownTrayIcon height={size} width={size} />
-    </button>
+    <Button className={cn('h-8 w-8', className)} size="icon" variant={variant} {...props}>
+      <ArrowDownTrayIcon
+        className="text-muted-foreground"
+        height={BUTTON_ICON_SIZE[size]}
+        width={BUTTON_ICON_SIZE[size]}
+      />
+    </Button>
   );
 };

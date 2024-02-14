@@ -6,6 +6,12 @@ import type { Simplify } from 'type-fest';
 
 import { cn } from '@/utils/cn';
 
+export const BUTTON_ICON_SIZE = {
+  lg: 18,
+  md: 16,
+  sm: 14
+};
+
 export const buttonVariants = cva(
   'flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50',
   {
