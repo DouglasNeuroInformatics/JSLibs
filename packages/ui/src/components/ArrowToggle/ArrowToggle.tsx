@@ -2,23 +2,26 @@ import React, { useMemo, useState } from 'react';
 
 import { ChevronUpIcon } from '@heroicons/react/24/solid';
 import { twMerge } from 'tailwind-merge';
+import type { Simplify } from 'type-fest';
 
-export type ArrowToggleProps = {
-  /** The size of the arrow in pixels (default is 16px) */
-  arrowSize?: number;
+export type ArrowToggleProps = Simplify<
+  Omit<React.ComponentPropsWithoutRef<'button'>, 'content'> & {
+    /** The size of the arrow in pixels (default is 16px) */
+    arrowSize?: number;
 
-  /** Custom content to insert beside the arrow */
-  content?: React.ReactNode;
+    /** Custom content to insert beside the arrow */
+    content?: React.ReactNode;
 
-  /** The position of the custom content, if applicable */
-  contentPosition?: 'left' | 'right';
+    /** The position of the custom content, if applicable */
+    contentPosition?: 'left' | 'right';
 
-  /** The starting position of the arrow (i.e., which direction does it point to) */
-  position: 'down' | 'left' | 'right' | 'up';
+    /** The starting position of the arrow (i.e., which direction does it point to) */
+    position: 'down' | 'left' | 'right' | 'up';
 
-  /** The clockwise rotation of the arrow when toggled (e.g., if the position is 'right' and rotation is 90, the arrow will point down) */
-  rotation: number;
-} & Omit<React.ComponentPropsWithoutRef<'button'>, 'content'>;
+    /** The clockwise rotation of the arrow when toggled (e.g., if the position is 'right' and rotation is 90, the arrow will point down) */
+    rotation: number;
+  }
+>;
 
 export const ArrowToggle = React.forwardRef<HTMLButtonElement, ArrowToggleProps>(function ArrowToggle(
   { arrowSize, className, content, contentPosition, onClick, position, rotation, ...props },
