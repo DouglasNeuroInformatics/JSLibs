@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
+import { Button } from '../Button';
 import { Card } from './Card';
 
 type Story = StoryObj<typeof Card>;
@@ -11,15 +12,23 @@ export default meta;
 export const Default: Story = {
   args: {
     children: (
-      <div>
-        <h3 className="font-medium text-xl my-5">Example</h3>
-        <p>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quia voluptatibus incidunt id. Minus cupiditate
-          eveniet at quam provident saepe repellat maxime natus! Similique provident quia, praesentium reiciendis fugiat
-          magnam dolorum?
-        </p>
-      </div>
-    ),
-    className: 'p-3'
+      <>
+        <Card.Header>
+          <Card.Title>Example</Card.Title>
+          <Card.Description>This is an example</Card.Description>
+        </Card.Header>
+        <Card.Content>
+          <p className="text-sm text-muted-foreground">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quia voluptatibus incidunt id. Minus cupiditate
+            eveniet at quam provident saepe repellat maxime natus! Similique provident quia, praesentium reiciendis
+            fugiat magnam dolorum?
+          </p>
+        </Card.Content>
+        <Card.Footer className="flex justify-between">
+          <Button variant="outline">Do Something</Button>
+          <Button>Do Something Else</Button>
+        </Card.Footer>
+      </>
+    )
   }
 };

@@ -4,8 +4,10 @@
 
 ### Breaking Changes
 - Button: Removed `label` and `icon` from props, to be replaced by `children`
+
 ### Minor Changes
 - Button: Added new variants
+- Card: Added `Card.Content`, `Card.Description`, `Card.Footer`, `Card.Header`, `Card.Title`
 
 ## 5.2.0
 

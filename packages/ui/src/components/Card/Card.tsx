@@ -1,21 +1,32 @@
-import React from 'react';
+import * as React from 'react';
 
-import { twMerge } from 'tailwind-merge';
+import { cn } from '@/utils/cn';
 
-export const Card = React.forwardRef<HTMLDivElement, React.HTMLProps<HTMLDivElement>>(function Card(
-  { children, className, ...props },
+const CardRoot = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(function CardRoot(
+  { className, ...props },
   ref
 ) {
   return (
-    <div
-      className={twMerge(
-        'bg-slate-50 dark:bg-slate-800 shadow-sm rounded-md ring-1 ring-slate-900/10 dark:ring-slate-100/25',
-        className
-      )}
-      ref={ref}
-      {...props}
-    >
-      {children}
-    </div>
+    <div className={cn('rounded-xl border bg-card text-card-foreground shadow', className)} ref={ref} {...props} />
   );
+});
+
+export const Card = Object.assign(CardRoot, {
+  Content: ({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) => (
+    <div className={cn('p-6 pt-0', className)} {...props} />
+  ),
+  Description: ({ className, ...props }: React.HTMLAttributes<HTMLParagraphElement>) => (
+    <p className={cn('text-sm text-muted-foreground', className)} {...props} />
+  ),
+  Footer: ({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) => {
+    return <div className={cn('flex items-center p-6 pt-0', className)} {...props} />;
+  },
+  Header: ({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) => (
+    <div className={cn('flex flex-col space-y-1.5 p-6', className)} {...props} />
+  ),
+  Title: ({ children, className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
+    <h3 className={cn('font-semibold leading-none tracking-tight', className)} {...props}>
+      {children}
+    </h3>
+  )
 });
