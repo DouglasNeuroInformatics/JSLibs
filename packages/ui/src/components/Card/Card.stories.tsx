@@ -2,6 +2,9 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import { Button } from '../Button';
 import { Card } from './Card';
+import { Select } from '../Select';
+import { Label } from '../Label';
+import { Input } from '../Input';
 
 type Story = StoryObj<typeof Card>;
 
@@ -13,21 +16,38 @@ export const Default: Story = {
   args: {
     children: (
       <>
-        <Card.Header>
-          <Card.Title>Example</Card.Title>
-          <Card.Description>This is an example</Card.Description>
-        </Card.Header>
-        <Card.Content>
-          <p className="text-sm text-muted-foreground">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quia voluptatibus incidunt id. Minus cupiditate
-            eveniet at quam provident saepe repellat maxime natus! Similique provident quia, praesentium reiciendis
-            fugiat magnam dolorum?
-          </p>
-        </Card.Content>
-        <Card.Footer className="flex justify-between">
-          <Button>Option A</Button>
-          <Button variant="outline">Option B</Button>
-        </Card.Footer>
+      <Card.Header>
+        <Card.Title>Create project</Card.Title>
+        <Card.Description>Deploy your new project in one-click.</Card.Description>
+      </Card.Header>
+      <Card.Content>
+        <form>
+          <div className="grid w-full items-center gap-4">
+            <div className="flex flex-col space-y-1.5">
+              <Label htmlFor="name">Name</Label>
+              <Input id="name" placeholder="Name of your project" />
+            </div>
+            <div className="flex flex-col space-y-1.5">
+              <Label htmlFor="framework">Framework</Label>
+              <Select>
+                <Select.Trigger id="framework">
+                  <Select.Value placeholder="Select" />
+                </Select.Trigger>
+                <Select.Content position="popper">
+                  <Select.Item value="next">Next.js</Select.Item>
+                  <Select.Item value="sveltekit">SvelteKit</Select.Item>
+                  <Select.Item value="astro">Astro</Select.Item>
+                  <Select.Item value="nuxt">Nuxt.js</Select.Item>
+                </Select.Content>
+              </Select>
+            </div>
+          </div>
+        </form>
+      </Card.Content>
+      <Card.Footer className="flex justify-between">
+        <Button variant="outline">Cancel</Button>
+        <Button>Deploy</Button>
+      </Card.Footer>
       </>
     ),
     className: 'max-w-xl'
