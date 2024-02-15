@@ -11,6 +11,7 @@ import { SelectTrigger } from './SelectTrigger';
 export const Select = Object.assign(SelectPrimitive.Root, {
   Content: SelectContent,
   Group: SelectPrimitive.Group,
+  Icon: SelectPrimitive.Icon,
   Item: SelectItem,
   Label: SelectLabel,
   ScrollDownButton: SelectScrollDownButton,

@@ -1,3 +1,4 @@
+import { CaretSortIcon } from '@radix-ui/react-icons';
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { Select } from './Select';
@@ -12,6 +13,9 @@ export const Default: Story = {
       <>
         <Select.Trigger className="w-[180px]">
           <Select.Value placeholder="Select a fruit" />
+          <Select.Icon asChild>
+            <CaretSortIcon className="h-4 w-4 opacity-50" />
+          </Select.Icon>
         </Select.Trigger>
         <Select.Content>
           <Select.Group>
