@@ -6,4 +6,4 @@ type Story = StoryObj<typeof Input>;
 
 export default { component: Input } as Meta<typeof Input>;
 
-export const Default: Story = {}
+export const Default: Story = {};

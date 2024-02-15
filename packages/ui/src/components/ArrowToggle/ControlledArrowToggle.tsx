@@ -38,7 +38,19 @@ export type ControlledArrowToggleProps = Simplify<
 
 export const ControlledArrowToggle = React.forwardRef<HTMLButtonElement, ControlledArrowToggleProps>(
   function ControlledArrowToggle(
-    { className, content, contentPosition, isToggled, onClick, position, rotation, setIsToggled, size, variant = 'ghost', ...props },
+    {
+      className,
+      content,
+      contentPosition,
+      isToggled,
+      onClick,
+      position,
+      rotation,
+      setIsToggled,
+      size,
+      variant = 'ghost',
+      ...props
+    },
     ref
   ) {
     const computedRotation = useMemo(() => {
