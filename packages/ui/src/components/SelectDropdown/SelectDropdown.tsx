@@ -2,8 +2,7 @@ import { Listbox, Transition } from '@headlessui/react';
 import { CheckIcon } from '@heroicons/react/24/solid';
 import { clsx } from 'clsx';
 
-import { type ButtonProps } from '../Button/Button';
-import { Card } from '../Card/Card';
+import { Card } from '../Card';
 import { DropdownButton } from '../DropdownButton';
 
 export type SelectOption = {
@@ -18,8 +17,6 @@ export type SelectDropdownProps<T extends SelectOption> = {
   selected: T[];
   setSelected: (selected: T[]) => void;
   title: string;
-  /** The button variant to use for the dropdown toggle */
-  variant?: ButtonProps['variant'];
 };
 
 export const SelectDropdown = <T extends SelectOption>({
@@ -28,8 +25,7 @@ export const SelectDropdown = <T extends SelectOption>({
   options,
   selected,
   setSelected,
-  title,
-  variant
+  title
 }: SelectDropdownProps<T>) => {
   // Here we specify the key prop of objects for comparison
   return (
@@ -41,11 +37,7 @@ export const SelectDropdown = <T extends SelectOption>({
       value={selected}
       onChange={setSelected}
     >
-      <Listbox.Button
-        as={DropdownButton}
-        className="h-full w-full"
-        variant={variant}
-      >
+      <Listbox.Button as={DropdownButton} className="h-full w-full">
         {title}
       </Listbox.Button>
       <Transition
