@@ -1,6 +1,7 @@
 import * as SelectPrimitive from '@radix-ui/react-select';
 
 import { SelectContent } from './SelectContent';
+import { SelectIcon } from './SelectIcon';
 import { SelectItem } from './SelectItem';
 import { SelectLabel } from './SelectLabel';
 import { SelectScrollDownButton } from './SelectScrollDownButton';
@@ -11,7 +12,7 @@ import { SelectTrigger } from './SelectTrigger';
 export const Select = Object.assign(SelectPrimitive.Root, {
   Content: SelectContent,
   Group: SelectPrimitive.Group,
-  Icon: SelectPrimitive.Icon,
+  Icon: SelectIcon,
   Item: SelectItem,
   Label: SelectLabel,
   ScrollDownButton: SelectScrollDownButton,
