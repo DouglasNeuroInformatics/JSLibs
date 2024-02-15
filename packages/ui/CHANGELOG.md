@@ -8,7 +8,7 @@
 - Tailwind: Removed `text-muted` and `text-strong`, can be replaced by `text-muted-foreground` and `text-primary-foreground` respectively
 - `FormPageWrapper`: Deleted
 - Dropdown: Remove `className`, `size`, and `variant` props
-- SelectDropdown: Remove `variant` props
+- SelectDropdown: Remove `checkPosition`, `variant` props
 
 ### Minor Changes
 - ArrowToggle: Added background effect on hover
