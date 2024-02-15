@@ -24,17 +24,15 @@ export type DropdownProps<T extends DropdownOptions> = {
 };
 
 // eslint-disable-next-line react/function-component-definition
-export function Dropdown<const T extends DropdownOptions>({
-  onSelection,
-  options,
-  title
-}: DropdownProps<T>) {
+export function Dropdown<const T extends DropdownOptions>({ onSelection, options, title }: DropdownProps<T>) {
   const optionKeys: readonly string[] = options instanceof Array ? options : Object.keys(options);
   return (
     <Select value="" onValueChange={onSelection}>
       <Select.Trigger>
         {title}
-        <ChevronDownIcon />
+        <Select.Icon asChild>
+          <ChevronDownIcon />
+        </Select.Icon>
       </Select.Trigger>
       <Select.Content>
         <Select.Group>
