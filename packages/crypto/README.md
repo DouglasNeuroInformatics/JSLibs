@@ -3,5 +3,5 @@
 ## Install
 
 ```shell
-bun add @douglasneuroinformatics/crypto
+pnpm add @douglasneuroinformatics/crypto
 ```

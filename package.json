@@ -3,9 +3,6 @@
   "private": true,
   "license": "LGPL-3.0",
   "type": "module",
-  "workspaces": [
-    "packages/*"
-  ],
   "scripts": {
     "build": "turbo run build",
     "clean": "find . -type d '(' -name '.turbo' -o -name 'dist' -o -name 'node_modules' ')' -prune -exec rm -rf {} \\;",
@@ -19,11 +16,12 @@
     "@changesets/cli": "^2.26.2",
     "@douglasneuroinformatics/eslint-config": "workspace:*",
     "@turbo/gen": "^1.10.16",
-    "bun-types": "^1.0.7",
+    "@types/node": "^20.11.20",
     "eslint": "^8.52.0",
     "husky": "^8.0.3",
     "prettier": "^3.0.3",
     "turbo": "^1.10.16",
     "typescript": "^5.2.2"
-  }
+  },
+  "packageManager": "pnpm@8.15.3"
 }

@@ -5,7 +5,7 @@ This repository houses generic, reusable React components for DNP projects.
 ## Install
 
 ```shell
-bun add @douglasneuroinformatics/ui
+pnpm add @douglasneuroinformatics/ui
 ```
 
 ## Usage
