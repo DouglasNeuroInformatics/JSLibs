@@ -1,5 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
+import { DownloadIcon } from '@/icons';
+
 import { Button } from './Button';
 
 type Story = StoryObj<typeof Button>;
@@ -30,6 +32,14 @@ export const Danger: Story = {
 export const Outline: Story = {
   args: {
     children: 'Outline Button',
+    variant: 'outline'
+  }
+};
+
+export const Icon: Story = {
+  args: {
+    children: <DownloadIcon />,
+    size: 'icon',
     variant: 'outline'
   }
 };
