@@ -1,8 +1,8 @@
 import * as React from 'react';
 
-import { ChevronUpIcon } from '@radix-ui/react-icons';
 import * as SelectPrimitive from '@radix-ui/react-select';
 
+import { ChevronUpIcon } from '@/icons';
 import { cn } from '@/utils';
 
 export const SelectScrollUpButton = React.forwardRef<

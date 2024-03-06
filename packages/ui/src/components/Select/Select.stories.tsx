@@ -1,5 +1,6 @@
-import { CaretSortIcon } from '@radix-ui/react-icons';
 import type { Meta, StoryObj } from '@storybook/react';
+
+import { CaretSortIcon } from '@/icons';
 
 import { Select } from './Select';
 

@@ -1,9 +1,9 @@
 import * as React from 'react';
 
-import { CheckIcon } from '@radix-ui/react-icons';
 import * as SelectPrimitive from '@radix-ui/react-select';
 import { match } from 'ts-pattern';
 
+import { CheckIcon } from '@/icons';
 import { cn } from '@/utils';
 
 export type SelectItemProps = React.ComponentPropsWithoutRef<typeof SelectPrimitive.Item> & {

@@ -11,6 +11,7 @@ export default defineConfig({
   dts: true,
   entry: [
     path.resolve(__dirname, 'src/i18n.ts'),
+    path.resolve(__dirname, 'src/icons.ts'),
     path.resolve(__dirname, 'src/utils.ts'),
     path.resolve(__dirname, 'src/components/index.ts'),
     path.resolve(__dirname, 'src/hooks/index.ts'),
