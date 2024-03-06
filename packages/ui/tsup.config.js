@@ -1,3 +1,4 @@
+import fs from 'fs/promises';
 import path from 'path';
 import url from 'url';
 
@@ -18,6 +19,11 @@ export default defineConfig({
     path.resolve(__dirname, 'src/legacy/index.ts')
   ],
   format: 'esm',
+  onSuccess: async () => {
+    await fs.cp(path.resolve(__dirname, 'src/styles'), path.resolve(__dirname, 'dist/styles'), {
+      recursive: true
+    });
+  },
   outDir: path.resolve(__dirname, 'dist'),
   platform: 'browser',
   sourcemap: true,

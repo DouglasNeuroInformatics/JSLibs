@@ -38,7 +38,7 @@
     "tailwind.config.d.cts"
   ],
   "scripts": {
-    "build": "tsup && cp -r src/styles dist",
+    "build": "tsup",
     "format": "prettier --write src",
     "lint": "tsc && eslint --fix src",
     "push": "pnpm lint && pnpm build && npm publish",
