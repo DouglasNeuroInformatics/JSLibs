@@ -7,10 +7,10 @@
     --background: theme(colors.slate.100);
     --foreground: theme(colors.slate.900);
 
-    --muted: theme(colors.slate.300);
+    --muted: theme(colors.slate.200);
     --muted-foreground: theme(colors.slate.700);
 
-    --accent: theme(colors.slate.300);
+    --accent: theme(colors.slate.200);
     --accent-foreground: theme(colors.slate.700);
 
     --popover: theme(colors.white);
@@ -40,10 +40,10 @@
     --background: theme(colors.slate.900);
     --foreground: theme(colors.slate.100);
 
-    --muted: theme(colors.slate.700);
+    --muted: theme(colors.slate.800);
     --muted-foreground: theme(colors.slate.300);
 
-    --accent: theme(colors.slate.700);
+    --accent: theme(colors.slate.800);
     --accent-foreground: theme(colors.slate.300);
 
     --popover: theme(colors.slate.800);
