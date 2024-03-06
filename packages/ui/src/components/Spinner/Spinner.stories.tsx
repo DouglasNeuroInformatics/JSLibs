@@ -8,4 +8,15 @@ const meta: Meta<typeof Spinner> = { component: Spinner };
 
 export default meta;
 
-export const Default: Story = {};
+export const Default: Story = {
+  decorators: [
+    (Story) => (
+      <div className="flex h-screen justify-center items-center">
+        <Story />
+      </div>
+    )
+  ],
+  parameters: {
+    layout: 'fullscreen'
+  }
+};
