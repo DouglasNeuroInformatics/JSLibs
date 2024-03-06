@@ -39,6 +39,7 @@
   ],
   "scripts": {
     "build": "tsup",
+    "dev": "tsup --watch",
     "format": "prettier --write src",
     "lint": "tsc && eslint --fix src",
     "push": "pnpm lint && pnpm build && npm publish",
