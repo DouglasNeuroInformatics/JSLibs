@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 type Theme = 'dark' | 'light';
 
@@ -51,12 +51,9 @@ function useTheme(): readonly [Theme, UpdateTheme] {
   }, []);
 
   // When the user wants to change the theme
-  const updateTheme = useCallback(
-    (theme: Theme) => {
-      document.documentElement.setAttribute(THEME_ATTRIBUTE, theme);
-    },
-    [document.documentElement]
-  );
+  const updateTheme = (theme: Theme) => {
+    document.documentElement.setAttribute(THEME_ATTRIBUTE, theme);
+  };
 
   return [theme, updateTheme] as const;
 }
