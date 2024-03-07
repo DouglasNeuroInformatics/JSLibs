@@ -1,3 +1,5 @@
+// @ts-check
+
 import path from 'node:path';
 
 import autoprefixer from 'autoprefixer';
@@ -10,7 +12,7 @@ const config = {
     '@storybook/addon-links',
     '@storybook/addon-essentials',
     '@storybook/addon-interactions',
-    '@storybook/addon-styling',
+    '@storybook/addon-themes',
     'storybook-react-i18next'
   ],
   docs: {

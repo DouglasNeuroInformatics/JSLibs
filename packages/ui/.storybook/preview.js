@@ -1,4 +1,6 @@
-import { withThemeByDataAttribute } from '@storybook/addon-styling';
+// @ts-check
+
+import { withThemeByDataAttribute } from '@storybook/addon-themes';
 
 import i18n from '../src/i18n';
 
